@@ -34,7 +34,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container maxWidth={false}>
+      <Container maxWidth="sm">
         <Grid
           container
           justifyContent='center'
@@ -44,15 +44,20 @@ function App() {
           <Grid item container  
           direction="row"
           justifyContent="space-between"
-          alignItems="flex-start">
+          alignItems="flex-start"
+          p={2}>
              <Button variant="contained" onClick={() => {
                 updateJoke();
               }}>Get A New Random Joke</Button>
              <Link href="https://github.com/15Dkatz/official_joke_api">View Api Docs</Link>
           </Grid>
-          <Typography variant='body1'>{joke.setup}</Typography>
+          <Grid item>
+            <Typography variant='body1'>{joke.setup}</Typography>
+          </Grid>
           {isShow &&
-          <Typography variant='body1'>{joke.punchline}</Typography>
+          <Grid item>  
+            <Typography variant='body1'>{joke.punchline}</Typography>
+          </Grid>
           }
           <Button variant="contained" onClick={() => {
                 handleClick();
