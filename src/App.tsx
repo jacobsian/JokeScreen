@@ -54,14 +54,16 @@ function App() {
           <Grid item>
             <Typography variant='body1'>{joke.setup}</Typography>
           </Grid>
+          <Grid item>
+          <Button variant="contained" onClick={() => {
+                handleClick();
+              }}>Show Punchline</Button>
+          </Grid>
           {isShow &&
           <Grid item>  
             <Typography variant='body1'>{joke.punchline}</Typography>
           </Grid>
           }
-          <Button variant="contained" onClick={() => {
-                handleClick();
-              }}>Show Punchline</Button>
         </Grid>
       </Container>
     </ThemeProvider>
